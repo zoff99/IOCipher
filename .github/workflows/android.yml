@@ -15,8 +15,7 @@ jobs:
         java-version: 1.8
 
     - name: build_it
-      with:
-        script: |
+      run: |
           apt-get --quiet update --yes
           apt-get --quiet install --yes wget unzip lib32stdc++6 lib32z1 ant ant-optional faketime git tcl libtool automake autoconf gawk libssl-dev make libqt5widgets5
           export ANDROID_BUILD_TOOLS="25.0.2"
