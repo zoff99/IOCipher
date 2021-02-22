@@ -16,6 +16,9 @@ jobs:
 
     - name: build_it
       run: |
+          ls -al
+          id -a
+          pwd
           sudo apt-get --quiet update --yes
           sudo apt-get --quiet install --yes wget unzip lib32stdc++6 lib32z1 ant ant-optional faketime git tcl libtool automake autoconf gawk libssl-dev make libqt5widgets5
           export ANDROID_BUILD_TOOLS="25.0.2"
@@ -35,6 +38,12 @@ jobs:
           $WGET --output-document=android-ndk.zip https://dl.google.com/android/repository/android-ndk-r${NDK_VERSION}-linux-x86_64.zip
           unzip -qq android-ndk.zip
           export ANDROID_NDK_HOME=$PWD/android-ndk-r${NDK_VERSION}
+          git submodule foreach --recursive git reset --hard
+          git submodule foreach --recursive git clean -fdx
+          git submodule sync --recursive
+          git submodule foreach --recursive git submodule sync
+          git submodule update --init --recursive
+          ./gradlew clean assemble lint
 
 
 
