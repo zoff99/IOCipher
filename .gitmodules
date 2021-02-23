@@ -3,4 +3,4 @@
 	url = https://github.com/sqlcipher/sqlcipher.git
 [submodule "external/libsqlfs"]
 	path = external/libsqlfs
-	url = https://github.com/guardianproject/libsqlfs.git
+	url = https://github.com/zoff99/libsqlfs.git
