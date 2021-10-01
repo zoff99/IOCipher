@@ -23,9 +23,9 @@ proguard-project.txt
 R.txt
 IOCipher*-*.zip
 IOCipher*-*.zip.asc
-IOCipher*-*.aar
+#IOCipher*-*.aar
 IOCipher*-*.aar.asc
-IOCipher*-*.pom
+#IOCipher*-*.pom
 IOCipher*-*.pom.asc
 
 # gradle build products
