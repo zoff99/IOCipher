@@ -1,5 +1,6 @@
 buildscript {
     repositories {
+        mavenCentral()
         jcenter()
     }
 
@@ -10,6 +11,7 @@ buildscript {
 
 allprojects {
     repositories {
+        mavenCentral()
         jcenter()
     }
 }
@@ -38,8 +40,11 @@ android {
         testFunctionalTest true
     }
 
-    // both libs/ and 'net.zetetic:android-database-sqlcipher:3.5.4@aar' contain these:
+    // both libs/ and 'net.zetetic:android-database-sqlcipher:x.y.z@aar' contain these:
     packagingOptions {
+
+        doNotStrip '**.so'
+
         pickFirst 'lib/armeabi-v7a/libsqlcipher.so'
         pickFirst 'lib/arm64-v8a/libsqlcipher.so'
         pickFirst 'lib/x86/libsqlcipher.so'
@@ -114,3 +119,22 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
 artifacts {
     archives javadocJar
 }
+
+
+
+//apply plugin: 'maven'
+//archivesBaseName = 'IOCipher'
+//group = 'info.guardianproject.iocipher'
+//version = '0.5.1'
+
+//install {
+//     repositories.mavenInstaller {
+//         pom.groupId 'info.guardianproject.iocipher'
+//         pom.artifactId 'IOCipher'
+//         pom.version '0.5.1'
+//         pom.name 'IOCipher'
+//         pom.description 'IOCipher'
+//         pom.packaging = 'aar'
+//     }
+// }
+

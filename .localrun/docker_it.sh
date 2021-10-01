@@ -156,6 +156,10 @@ unzip -qq android-ndk.zip
 
 export ANDROID_NDK_HOME=$PWD/android-ndk-r${NDK_VERSION}
 
+# Submodule path external/libsqlfs: checked out 9601168d8331e7ca488b70c1aa4111a779ac44c1
+# Submodule path external/sqlcipher: checked out 85a407e259d9ac73de3937e1f0bc25771a0509eb
+
+
 git submodule foreach --recursive git reset --hard
 git submodule foreach --recursive git clean -fdx
 git submodule sync --recursive
@@ -169,9 +173,17 @@ TIMESTAMP=`printf "%(%Y-%m-%d %H:%M:%S)T" \
     $(git log -n1 --format=format:%at)`
 
 faketime -f "$TIMESTAMP" make -C external/
-faketime -f "$TIMESTAMP" $ANDROID_NDK_HOME/ndk-build
+faketime -f "$TIMESTAMP" $ANDROID_NDK_HOME/ndk-build NDK_DEBUG=0 V=1
 
 ./gradlew clean assemble
+
+find . -name "*.pom"|grep -i iocip
+
+#./gradlew install --info
+#./gradlew publishToMavenLocal
+#./gradlew tasks
+
+find . -name "*.pom"|grep -i iocip
 
 ls -hal /workspace/data/build/outputs/aar/data-debug.aar
 ls -hal /workspace/data/build/outputs/aar/data-release.aar
