@@ -220,8 +220,14 @@ static void VirtualFileSystem_unmount(JNIEnv *env, jobject obj) {
         snprintf(msg, 255,
                  "Cannot unmount when threads are still active! (%i threads)",
                  sqlfs_instance_count() - 1);
-        jniThrowException(env, "java/lang/IllegalStateException", msg);
-        return;
+        // Zoff: since I am using this in java on the main thread, this is now only a warning
+        //       be careful and know what you are using, when using this pachted version!
+        //
+        // jniThrowException(env, "java/lang/IllegalStateException", msg);
+        // return;
+        //
+        // Zoff: since I am using this in java on the main thread, this is now only a warning
+        //       be careful and know what you are using, when using this pachted version!
     }
     sqlfs_close(sqlfs);
     sqlfs = NULL;
