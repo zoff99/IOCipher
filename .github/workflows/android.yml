@@ -49,4 +49,6 @@ jobs:
           faketime -f "$TIMESTAMP" make -C external/
           faketime -f "$TIMESTAMP" $ANDROID_NDK_HOME/ndk-build
           ./gradlew clean assemble
+          find . -name "*.pom"|grep -i iocip
+          find . -name "*.aar"
 
