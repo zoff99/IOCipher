@@ -77,3 +77,11 @@ jobs:
           ls -al $(pwd)/local_maven_iocpiher_"$version".zip
           echo ""
           echo "##########################"
+
+    - name: upload artefacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: maven_package
+        path: |
+          /home/runner/work/IOCipher/IOCipher/tmp/local_maven_iocpiher_*.zip
+
