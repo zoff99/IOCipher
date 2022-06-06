@@ -13,7 +13,7 @@ cd $_HOME_
 build_for='ubuntu_18.04'
 aar_dir=$_HOME_/"$build_for"/artefacts
 aar_file=$aar_dir/data-release.aar
-version="0.4.2.101"
+version="0.4.2.102"
 
 rm -Rf ./tmp/
 mkdir -p ./tmp/
