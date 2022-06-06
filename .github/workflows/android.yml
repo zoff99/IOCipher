@@ -63,7 +63,7 @@ jobs:
           version="0.4.2.101"
           rm -Rf ./tmp/
           mkdir -p ./tmp/
-          cp -av .m2 ./tmp/
+          cp -av ./.localrun/.m2 ./tmp/
           mv tmp/.m2/repository/info/guardianproject/iocipher/IOCipher/0.4.2 tmp/.m2/repository/info/guardianproject/iocipher/IOCipher/"$version"
           mv tmp/.m2/repository/info/guardianproject/iocipher/IOCipher/"$version"/IOCipher-0.4.2.pom tmp/.m2/repository/info/guardianproject/iocipher/IOCipher/"$version"/IOCipher-"$version".pom
           rm tmp/.m2/repository/info/guardianproject/iocipher/IOCipher/"$version"/IOCipher-0.4.2.aar
