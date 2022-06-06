@@ -1,2 +1,6 @@
 ubuntu_18.04
 tmp
+res
+jni
+AndroidManifest.xml
+classes.jar
