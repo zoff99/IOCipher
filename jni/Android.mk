@@ -9,14 +9,14 @@ sqlfs_DEFS := -D_FILE_OFFSET_BITS=64 -D_REENTRANT -DFUSE_USE_VERSION=25 -DHAVE_L
 include $(CLEAR_VARS)
 LOCAL_MODULE     := libsqlfs
 LOCAL_SHARED_LIBRARIES := libsqlcipher
-LOCAL_CFLAGS     := $(sqlfs_DEFS) -Wall -Werror
+LOCAL_CFLAGS     := $(sqlfs_DEFS) -g -Wall -Werror
 LOCAL_C_INCLUDES := external/libsqlfs jni
 LOCAL_EXPORT_C_INCLUDES:= external/libsqlfs
 LOCAL_SRC_FILES  := ../external/libsqlfs/sqlfs.c
 include $(BUILD_STATIC_LIBRARY)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE    := libiocipher
+LOCAL_MODULE    := libiocipher2
 LOCAL_STATIC_LIBRARIES := libsqlfs
 LOCAL_SHARED_LIBRARIES := libsqlcipher
 LOCAL_CFLAGS += -DHAVE_LIBSQLCIPHER
@@ -40,7 +40,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE     := sqlfscat
 LOCAL_CFLAGS     := $(sqlfs_DEFS) -Wall -Werror
 LOCAL_C_INCLUDES := external/libsqlfs
-LOCAL_SHARED_LIBRARIES := libiocipher libsqlcipher
+LOCAL_SHARED_LIBRARIES := libiocipher2 libsqlcipher
 LOCAL_LDLIBS     := -llog
 LOCAL_SRC_FILES  := ../external/libsqlfs/sqlfscat.c
 include $(BUILD_EXECUTABLE)
