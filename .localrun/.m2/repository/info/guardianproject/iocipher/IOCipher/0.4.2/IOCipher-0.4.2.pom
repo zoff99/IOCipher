@@ -3,10 +3,10 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>info.guardianproject.iocipher</groupId>
-  <artifactId>IOCipher</artifactId>
+  <artifactId>IOCipher2</artifactId>
   <version>0.4.2</version>
   <packaging>aar</packaging>
-  <name>IOCipher</name>
+  <name>IOCipher2</name>
   <url>https://guardianproject.info/code/iocipher</url>
   <description>NetCipher is a library for Android that provides multiple means to improve network security in mobile applications. It provides best practices TLS settings using the standard Android HTTP methods, HttpURLConnection and Apache HTTP Client, provides simple Tor integration, makes it easy to configure proxies for HTTP connections and `WebView` instances.</description>
   <licenses>
