@@ -30,8 +30,6 @@ sed -i -e 's#0.4.2#'"$version"'#g' tmp/.m2/repository/info/guardianproject/iocip
 
 cd tmp/
 zip -r local_maven_iocpiher_"$version".zip .m2
-rm -Rf $_HOME_/.m2/
-mv -v .m2 $_HOME_/
 
 echo "##########################"
 echo ""
