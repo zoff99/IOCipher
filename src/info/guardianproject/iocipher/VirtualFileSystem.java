@@ -15,7 +15,7 @@ public class VirtualFileSystem {
     private static VirtualFileSystem vfs;
 
     static {
-        System.loadLibrary("sqlcipher");
+        System.loadLibrary("sqlcipher2");
         System.loadLibrary("iocipher");
     }
 
