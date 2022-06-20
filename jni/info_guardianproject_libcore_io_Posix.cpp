@@ -355,8 +355,6 @@ static jint Posix_pwriteBytes(JNIEnv* env, jobject, jobject javaFd, jobject java
     }
     jstring javaPath = jniGetPathFromFileDescriptor(env, javaFd);
     ScopedUtfChars path(env, javaPath);
-    //struct fuse_file_info ffi;
-    //ffi.flags = flags;
     int modeFlagsNow = modeFlags;
     int result = sqlfs_proc_write(0,
                                   path.c_str(),
