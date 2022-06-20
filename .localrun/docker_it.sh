@@ -166,6 +166,18 @@ git submodule sync --recursive
 git submodule foreach --recursive git submodule sync
 git submodule update --init --recursive
 
+if [ -e /workspace/data/sqlfs.c ]; then
+    ls -al ./external/libsqlfs/sqlfs.c
+    cp -v /workspace/data/sqlfs.c ./external/libsqlfs/sqlfs.c
+    ls -al ./external/libsqlfs/sqlfs.c
+fi
+
+if [ -e /workspace/data/sqlfs_internal.h ]; then
+    ls -al ./external/libsqlfs/sqlfs_internal.h
+    cp -v /workspace/data/sqlfs_internal.h ./external/libsqlfs/sqlfs_internal.h
+    ls -al ./external/libsqlfs/sqlfs_internal.h
+fi
+
 projectroot=`pwd`
 # standardize timezone to reduce build differences
 export TZ=UTC
