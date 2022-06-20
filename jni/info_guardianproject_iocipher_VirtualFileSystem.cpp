@@ -218,7 +218,7 @@ static void VirtualFileSystem_unmount(JNIEnv *env, jobject obj) {
      * libsqlfs to close the database and zero out the key/password. */
     if (sqlfs_instance_count() > 1) {
         snprintf(msg, 255,
-                 "Cannot unmount when threads are still active! (%i threads)",
+                 "WARNING: unmounting when threads are still active! (%i threads)",
                  sqlfs_instance_count() - 1);
         // Zoff: since I am using this in java on the main thread, this is now only a warning
         //       be careful and know what you are using, when using this pachted version!
