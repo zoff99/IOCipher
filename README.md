@@ -1,3 +1,5 @@
+<H2>This repo is archived. Please use https://github.com/zoff99/iocipher_pack</H2>
+<br><br><br><br><br><br><br>
 
 IOCipher: Encrypted Virtual Disk
 --------------------------------
